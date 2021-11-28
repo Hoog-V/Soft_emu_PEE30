@@ -2,9 +2,9 @@
  * Copyright (c) 2021, Victor Hogeweij
  * Alle rechten voorbehouden,
  *
- * Deze software is uitgebracht onder licentie van: GPL V3. 
+ * Deze software is uitgebracht onder licentie van: GPL V3.
  * Bij het ontvangen van dit programma is er een versie van de GPL V3 licentie
- * meegeleverd. (zie het bestand LICENSE!). 
+ * meegeleverd. (zie het bestand LICENSE!).
  * In dit meegeleverde bestand staan de regels voor het gebruiken, modificeren en delen van deze software.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -19,12 +19,6 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * --/COPYRIGHT--*/
-/*
- * Debug_console_menu.c
- *
- *  Created on: 21 nov. 2021
- *      Author: victor
- */
 #include <msp430.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -110,7 +104,10 @@ void Debug_menu(){
         uint8_t gekozen_optie = debug_invoer[0]-48;
         switch(gekozen_optie){
         case 1:
-            emuleer_aandrijving();
+            emuleer_aandrijving_i2c();
+            break;
+        case 2:
+            emuleer_aandrijving_uart();
             break;
         case 4:
             huidige_status = optie;

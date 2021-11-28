@@ -2,9 +2,9 @@
  * Copyright (c) 2021, Victor Hogeweij
  * Alle rechten voorbehouden,
  *
- * Deze software is uitgebracht onder licentie van: GPL V3. 
+ * Deze software is uitgebracht onder licentie van: GPL V3.
  * Bij het ontvangen van dit programma is er een versie van de GPL V3 licentie
- * meegeleverd. (zie het bestand LICENSE!). 
+ * meegeleverd. (zie het bestand LICENSE!).
  * In dit meegeleverde bestand staan de regels voor het gebruiken, modificeren en delen van deze software.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"

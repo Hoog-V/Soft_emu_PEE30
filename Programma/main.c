@@ -2,22 +2,22 @@
  * Copyright (c) 2021, Victor Hogeweij
  * Alle rechten voorbehouden,
  *
- * Deze software is uitgebracht onder licentie van: GPL V3. 
+ * Deze software is uitgebracht onder licentie van: GPL V3.
  * Bij het ontvangen van dit programma is er een versie van de GPL V3 licentie
- * meegeleverd. (zie het bestand LICENSE!). 
+ * meegeleverd. (zie het bestand LICENSE!).
  * In dit meegeleverde bestand staan de regels voor het gebruiken, modificeren en delen van deze software.
  *
  * Hier staat de licentie kort samengevat:
  * Het gebruiken en het delen van deze software in zowel source als binair
  * formaat is toegestaan. Mits er aan de volgende eisen voldaan wordt:
  *
- * * Bij het delen van de software moet deze copyright tekst inclusief 
+ * * Bij het delen van de software moet deze copyright tekst inclusief
  *   de condities en de disclaimer in de source code blijven staan.
- * 
- * * Bij het delen van de software moeten veranderingen aan de software
- *   gedocumenteerd worden. 
  *
- * * Bij het maken van een commercieel product met deze software moet de 
+ * * Bij het delen van de software moeten veranderingen aan de software
+ *   gedocumenteerd worden.
+ *
+ * * Bij het maken van een commercieel product met deze software moet de
  *   complete software (source code) inclusief de gemaakte veranderingen online gezet
  *   worden.
  *
@@ -39,8 +39,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * --/COPYRIGHT--*/
- 
- 
+
 
 #include <msp430.h> 
 #include <stdint.h>

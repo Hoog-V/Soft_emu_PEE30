@@ -2,9 +2,9 @@
  * Copyright (c) 2021, Victor Hogeweij
  * Alle rechten voorbehouden,
  *
- * Deze software is uitgebracht onder licentie van: GPL V3. 
+ * Deze software is uitgebracht onder licentie van: GPL V3.
  * Bij het ontvangen van dit programma is er een versie van de GPL V3 licentie
- * meegeleverd. (zie het bestand LICENSE!). 
+ * meegeleverd. (zie het bestand LICENSE!).
  * In dit meegeleverde bestand staan de regels voor het gebruiken, modificeren en delen van deze software.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -19,12 +19,11 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * --/COPYRIGHT--*/
- 
- 
 #include <Debug_console.h>
 #include <I2C.h>
-
-void emuleer_aandrijving(){
+#include <UART.h>
+#include <stdint.h>
+void emuleer_aandrijving_i2c(){
     Wis_debug_console();
     I2C_init_slave();
     I2C_setreg(0x03,0xFFFF);
@@ -32,6 +31,17 @@ void emuleer_aandrijving(){
     while (Enter == false);
     Enter = false;
 }
+void emuleer_aandrijving_uart(){
+    Wis_debug_console();
+    UART_init();
+    Debug_puts("UART_test\r\n");
+    static char uart_data[50];
+    uint8_t size = UART_recv(uart_data);
+    static int recv_data[5];
+    parse_uart_data(uart_data,size,recv_data);
 
+    while (Enter == false);
+    Enter = false;
+}
 
 
