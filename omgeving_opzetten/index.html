@@ -13,7 +13,7 @@
     
     
       
-        <title>Test - Software emulator PEE30</title>
+        <title>Omgeving opzetten - Software emulator PEE30</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dit-is-een-testbestand" class="md-skip">
+        <a href="#omgeving-opzetten" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Test
+              Omgeving opzetten
             
           </span>
         </div>
@@ -158,11 +158,52 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../omgeving_opzetten/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Omgeving opzetten
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Omgeving opzetten
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installeer-een-uart-terminal-putty-terraterm-eg" class="md-nav__link">
+    Installeer een UART terminal (putty, terraterm, e.g.)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -173,48 +214,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Test
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../test/" class="md-nav__link">
         Test
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dit-is-een-testbestand" class="md-nav__link">
-    Dit is een testbestand!
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -236,6 +240,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -244,8 +250,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dit-is-een-testbestand" class="md-nav__link">
-    Dit is een testbestand!
+  <a href="#installeer-een-uart-terminal-putty-terraterm-eg" class="md-nav__link">
+    Installeer een UART terminal (putty, terraterm, e.g.)
   </a>
   
 </li>
@@ -263,9 +269,51 @@
               
                 
 
-  <h1>Test</h1>
-
-<h2 id="dit-is-een-testbestand">Dit is een testbestand!</h2>
+<h1 id="omgeving-opzetten">Omgeving opzetten</h1>
+<h2 id="installeer-een-uart-terminal-putty-terraterm-eg">Installeer een UART terminal (putty, terraterm, e.g.)</h2>
+<p>Als je al een UART terminal app hebt geïnstalleerd op je computer,
+kun je deze stap overslaan. Het gebruik van putty wordt aangeraden. 
+Terraterm werkt ook maar kan vrij onstabiel zijn soms.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">Linux(ubuntu)</label><label for="__tabbed_1_3">Linux(arch of manjaro)</label><label for="__tabbed_1_4">Mac os</label><label for="__tabbed_1_5">Mac os (homebrew)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Download putty</strong> <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">hier</a></p>
+<p>Kies voor de optie: <strong>64-bit x86 MSI installer</strong> en installeer het op je pc.</p>
+<p><p>&nbsp;</p>
+Hier een video als je er niet uitkomt...
+<iframe src="https://www.youtube.com/embed/0ptZPTTwRaE" style="position: relative; width: 100%; height: 22.172vw" frameborder="0" allowfullscreen></iframe></p>
+</div>
+<div class="tabbed-block">
+<p><strong>Voor een grafische uart terminal:</strong></p>
+<p>Open de terminal en tik in:
+<code>sudo apt-get install putty</code></p>
+<p><strong>Voor een uart sessie in de terminal:</strong></p>
+<p>Open de terminal en tik in:
+ <code>sudo apt-get install screen</code></p>
+</div>
+<div class="tabbed-block">
+<p><strong>Voor een grafische uart terminal:</strong></p>
+<p>Open de terminal en tik in:
+ <code>sudo pacman -S putty</code></p>
+<p><strong>Voor een uart sessie in de terminal:</strong></p>
+<p>Open de terminal en tik in:
+ <code>sudo pacman -S screen</code></p>
+</div>
+<div class="tabbed-block">
+<p><strong>Open de applicatie terminal</strong>
+In de terminal kunnen we straks een UART sessie openen met het
+screen commando.</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Let op!</strong></p>
+<p><strong>Hiervoor moet je homebrew op je mac hebben geïnstalleerd</strong></p>
+<p>Open de terminal en tik in:
+<code>brew install putty</code> </p>
+<p>Als die vraagt om een wachtwoord moet je het inlogwachtwoord invoeren.</p>
+<p>Zie <a href="https://www.ssh.com/academy/ssh/putty/mac">deze</a> site voor meer uitleg.</p>
+</div>
+</div>
+</div>
 
               
             </article>
@@ -279,7 +327,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../omgeving_opzetten/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Omgeving opzetten" rel="prev">
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Documentatie voor de PEE30 Software emulator" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -288,11 +336,26 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Omgeving opzetten
+              Documentatie voor de PEE30 Software emulator
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../test/" class="md-footer__link md-footer__link--next" aria-label="Next: Test" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Test
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
