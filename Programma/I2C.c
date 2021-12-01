@@ -22,9 +22,9 @@
 #include <msp430.h>
 #include <stdint.h>
 
-unsigned char TXData[3]; // Pointer to TX data
-unsigned char TXByteCtr;
-unsigned char byteIndex =0;
+unsigned char TXData[3];
+unsigned char RXData[3];
+unsigned char TXByteCtr, RXByteCtr,byteIndex =0;
 unsigned char pointerAdres;      //bevat adres van te lezen/schrijven 'register'
 unsigned char *pData = &pointerAdres;
 unsigned char SLAVE_ADDR = 0x48;
@@ -64,7 +64,7 @@ void I2C_init_slave()
     rxctr = 0;                              // rx teller naar 0
     __bis_SR_register(GIE);
 }
-void I2C_send(uint8_t slaveaddr, uint8_t register_id, uint8_t *Data,
+void I2C_master_write(uint8_t slaveaddr, uint8_t register_id, uint8_t *Data,
               uint8_t numbytes)
 {
     UCB0I2CSA = slaveaddr;              // configure slave address
@@ -81,7 +81,27 @@ void I2C_send(uint8_t slaveaddr, uint8_t register_id, uint8_t *Data,
                                                  // Remain in LPM0 until all data
                                                  // is TX'd
 }
-void I2C_recv(uint8_t register_id, uint8_t *Data){
+void I2C_master_recv(uint8_t slaveaddr,uint8_t register_id, uint8_t *Data, uint8_t numbytes){
+    UCB0I2CSA = slaveaddr;              // configure slave address
+    uint8_t i;
+    TXData[0]=register_id;
+    for(i=0; i<numbytes; i++)
+        TXData[i+1]= Data[i];
+    byteIndex = 0;
+    __delay_cycles(1000);                         // Delay between transmissions
+    TXByteCtr = numbytes + 1;                            // Load TX byte counter
+    while (UCB0CTLW0 & UCTXSTP);                      // Ensure stop condition got sent
+    UCB0CTLW0 |= UCTR | UCTXSTT;                  // I2C TX, start condition
+    __bis_SR_register(LPM0_bits | GIE);          // Enter LPM0 w/ interrupts
+                                                 // Remain in LPM0 until all data
+                                                 // is TX'd
+    RXByteCtr = numbytes;                          // Load RX byte counter
+    while (UCB0CTLW0 & UCTXSTP);             // Ensure stop condition got sent
+    UCB0CTLW0 |= UCTXSTT;                    // I2C start condition
+    __bis_SR_register(CPUOFF + GIE);        // Enter LPM0 w/ interrupts
+}
+
+void I2C_slave_recv(uint8_t register_id, uint8_t *Data){
     *Data = registers[register_id];
 }
 
@@ -139,7 +159,18 @@ void __attribute__ ((interrupt(USCI_B0_VECTOR))) USCIB0_ISR (void)
     case USCI_I2C_UCTXIFG2:
         break;                // Vector 18: TXIFG2 break;
     case USCI_I2C_UCRXIFG1:
-
+        RXByteCtr--;                              // Decrement RX byte counter
+        if (RXByteCtr)
+        {
+          RXData[RXByteCtr-1] = UCB0RXBUF;                 // Move RX data to address PRxData
+          if (RXByteCtr == 1)                     // Only one byte left?
+            UCB0CTL1 |= UCTXSTP;                  // Generate I2C stop condition
+        }
+        else
+        {
+          RXData[0] = UCB0RXBUF;                   // Move final RX data to PRxData
+          __bic_SR_register_on_exit(CPUOFF);      // Exit LPM0
+        }
         break;                // Vector 20: RXIFG1 break;
     case USCI_I2C_UCTXIFG1:
         if (TXByteCtr)                                // Check TX byte counter
