@@ -56,8 +56,8 @@ void UART_init(void)
 
 void UART_putc(unsigned char c)
 {
-    while(!(UCA0IFG&UCTXIFG));
-    UCA0TXBUF = c;                          // TX
+    while(!(UCA1IFG&UCTXIFG));
+    UCA1TXBUF = c;                          // TX
 }
 
 void UART_puts(const char *str)
@@ -88,17 +88,14 @@ void __attribute__ ((interrupt(USCI_A0_VECTOR))) USCI_A0_ISR (void)
     case USCI_NONE: break;
     case USCI_UART_UCRXIFG:
       while(!(UCA1IFG&UCTXIFG));
-      if(UCA1RXBUF == '\n'){
+      if(UCA1RXBUF == '\r'){
           uart_data_size = array_index-1;
           array_index =0;
           UART_puts("ACK");
           __bic_SR_register_on_exit(LPM0_bits);     // Exit LPM0
       }
       else{
-      if(UCA1RXBUF == '\r')
-          break;
-      UCA1RXBUF = uart_data[array_index];
-      array_index++;
+      uart_data[array_index++] = UCA1RXBUF;
       }
       __no_operation();
       break;
