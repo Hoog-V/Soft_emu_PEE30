@@ -7,3 +7,17 @@ plugins:
 markdown_extensions:
 - pymdownx.tabbed:
     alternate_style: true 
+- admonition
+- pymdownx.details
+- pymdownx.superfences
+
+nav:
+    - Home: 'index.md'
+    - 'Layout en navigatie van het emulatie programma': 'Layout_en_navigatie.md'
+    - 'Testen':
+        - 'MCU emulatie': 'MCU_emulatie.md'
+        - 'Aandrijving emulatie': 'aandrijving_emulatie.md'
+        - 'Belasting emulatie': 'belasting_emulatie.md'
+    - Over het project:
+        - 'Licentie': 'license.md'
+        - 'Bijdragers/Contribuanten': 'Bijdragers.md'

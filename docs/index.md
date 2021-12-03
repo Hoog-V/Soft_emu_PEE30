@@ -22,7 +22,7 @@ de kans groter zijn dat alle onderdelen met elkaar kunnen communiceren groter zi
 
 Ben je al in bezit van een MSP430FR2476? Zo niet kun je een bordje bij Victor kopen voor €8.
 Bovendien moet het bordje een werkende UART emulator/converter hebben zodat er tussen de PC 
-en MSP430FR2476 gecommuniceerd kan worden. 
+en MSP430FR2476 gecommuniceerd kan worden (deze zit standaard al ingebouwd op de MSP430FR2476 launchpad en het testbordje van Victor) . 
 
 
 Heb je deze controller dan kun je hiermee verder: [omgeving opzetten](omgeving_opzetten.md)
