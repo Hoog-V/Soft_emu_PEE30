@@ -7,6 +7,7 @@ plugins:
 markdown_extensions:
 - pymdownx.tabbed:
     alternate_style: true 
+- tables
 - admonition
 - pymdownx.details
 - pymdownx.superfences
@@ -18,6 +19,10 @@ nav:
         - 'MCU emulatie': 'MCU_emulatie.md'
         - 'Aandrijving emulatie': 'aandrijving_emulatie.md'
         - 'Belasting emulatie': 'belasting_emulatie.md'
+    - Datacommunicatie:
+        - 'Afspraken datacommunicatie' : 'afspraken_datacommunicatie.md'
+        - 'Pin-out Breakoutbord' : 'pin_out_breakoutbord.md'
+        - 'Registers en slave adressen I2C' : 'registers.md'
     - Over het project:
         - 'Licentie': 'license.md'
         - 'Bijdragers/Contribuanten': 'Bijdragers.md'

@@ -11,7 +11,7 @@ Bovendien zijn de vakdocenten ingelicht over het bestaan van deze repository.
 Hierdoor wordt ook verwarring bij docenten voorkomen.
 
 
-!!! note "Kort samengevat" 
+!!! summary "Kort samengevat" 
         Het lezen van de hele licentie kan best vermoeiend zijn.
         Om die rede staat hieronder de licentie kort samengevat.
         
