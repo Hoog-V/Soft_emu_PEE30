@@ -13,7 +13,7 @@ Hierdoor wordt ook verwarring bij docenten voorkomen.
 
 !!! summary "Kort samengevat" 
         Het lezen van de hele licentie kan best vermoeiend zijn.
-        Om die rede staat hieronder de licentie kort samengevat.
+        Om die reden staat hieronder de licentie kort samengevat.
         
         <p>&nbsp;</p>
         Wat mag je doen met code, documentatie en andere bestanden die 

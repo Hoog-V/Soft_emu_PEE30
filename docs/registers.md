@@ -16,7 +16,7 @@ In overleg met de projectleiders is er besloten welke data in wel register komt.
 <style>
 .divTable{
 	display: table;
-	width: 90%;
+	width: 80%;
 }
 .divTableRow {
 	display: table-row;
@@ -42,7 +42,7 @@ In overleg met de projectleiders is er besloten welke data in wel register komt.
 	border: 1px solid #999999;
 	text-align: center;
 	display: table-cell;
-	font-size: 100%;
+	font-size: 90%;
 	padding: 10px 30px;
 }
 .divTableHeading {
@@ -62,6 +62,7 @@ In overleg met de projectleiders is er besloten welke data in wel register komt.
 
 !!! info "Register 0: Status aandrijving"
         #### Register 0: Status aandrijving
+        #### BIT:
         <div class="divTable">
         <div class="divTableBody">
         <div class="divTableRow">
@@ -115,9 +116,9 @@ In overleg met de projectleiders is er besloten welke data in wel register komt.
         <div class="divTableCell">&nbsp;</div>
         <div class="divTableCell">&nbsp;</div>
         <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCellt">Status</div>
-        <div class="divTableCellt">Status</div>
-        <div class="divTableCellt">Status</div>
+        <div class="divTableCellt">Stat</div>
+        <div class="divTableCellt">Stat</div>
+        <div class="divTableCellt">Stat</div>
         </div>
         <div class="divTableRow">
         <div class="divTableCellp">RO</div>
@@ -132,7 +133,7 @@ In overleg met de projectleiders is er besloten welke data in wel register komt.
         </div>
         </div>
 
-        ###Status [2:0] Status aandrijving
+        ###Stat [2:0] Status aandrijving
         
         Mogelijke status:
         
@@ -148,6 +149,7 @@ In overleg met de projectleiders is er besloten welke data in wel register komt.
         
 !!! info "Register 1: Rendement aandrijving"
         #### Register 1: Rendement aandrijving
+        #### BIT:
         <div class="divTable">
         <div class="divTableBody">
         <div class="divTableRow">
@@ -197,13 +199,13 @@ In overleg met de projectleiders is er besloten welke data in wel register komt.
         </div>
         <div class="divTableRow">
         <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCellt">Ren.</div>
-        <div class="divTableCellt">Ren.</div>
-        <div class="divTableCellt">Ren.</div>
-        <div class="divTableCellt">Ren.</div>
-        <div class="divTableCellt">Ren.</div>
-        <div class="divTableCellt">Ren.</div>
-        <div class="divTableCellt">Ren.</div>
+        <div class="divTableCellt">Ren</div>
+        <div class="divTableCellt">Ren</div>
+        <div class="divTableCellt">Ren</div>
+        <div class="divTableCellt">Ren</div>
+        <div class="divTableCellt">Ren</div>
+        <div class="divTableCellt">Ren</div>
+        <div class="divTableCellt">Ren</div>
         </div>
         <div class="divTableRow">
         <div class="divTableCellp">RO</div>
@@ -218,7 +220,7 @@ In overleg met de projectleiders is er besloten welke data in wel register komt.
         </div>
         </div>
         
-        ### Ren. [6:0] Rendement aandrijving 
+        ### Ren [6:0] Rendement aandrijving 
         
         Mogelijke waarden zijn theoretisch mogelijk van 0-127. 
         Echter wordt alleen het bereik van 0-100(%) gebruikt.
@@ -298,4 +300,82 @@ In overleg met de projectleiders is er besloten welke data in wel register komt.
         ### IA [15:0] Stroom aandrijving    
         
         Mogelijke waarden zijn 0-65635 (mA)
+        
+!!! info "Register 3: Stroom aandrijving"
+        #### Register 1: Stroom aandrijving
+        <div class="divTable">
+        <div class="divTableBody">
+        <div class="divTableRow">
+        <div class="divTableCellp">15</div>
+        <div class="divTableCellp">14</div>
+        <div class="divTableCellp">13</div>
+        <div class="divTableCellp">12</div>
+        <div class="divTableCellp">11</div>
+        <div class="divTableCellp">10</div>
+        <div class="divTableCellp">9</div>
+        <div class="divTableCellp">8</div>
+        </div>
+        <div class="divTableRow">
+        <div class="divTableCellt">IA</div>
+        <div class="divTableCellt">IA</div>
+        <div class="divTableCellt">IA</div>
+        <div class="divTableCellt">IA</div>
+        <div class="divTableCellt">IA</div>
+        <div class="divTableCellt">IA</div>
+        <div class="divTableCellt">IA</div>
+        <div class="divTableCellt">IA</div>
+        </div>
+        <div class="divTableRow">
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        </div>
+        </div>
+        </div>
+ 
+        <div class="divTable">
+        <div class="divTableBody">
+        <div class="divTableRow">
+        <div class="divTableCellp">7</div>
+        <div class="divTableCellp">6</div>
+        <div class="divTableCellp">5</div>
+        <div class="divTableCellp">4</div>
+        <div class="divTableCellp">3</div>
+        <div class="divTableCellp">2</div>
+        <div class="divTableCellp">1</div>
+        <div class="divTableCellp">0</div>
+        </div>
+        <div class="divTableRow">
+        <div class="divTableCellt">IA</div>
+        <div class="divTableCellt">IA.</div>
+        <div class="divTableCellt">IA.</div>
+        <div class="divTableCellt">IA.</div>
+        <div class="divTableCellt">IA.</div>
+        <div class="divTableCellt">IA.</div>
+        <div class="divTableCellt">IA.</div>
+        <div class="divTableCellt">IA.</div>
+        </div>
+        <div class="divTableRow">
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        <div class="divTableCellp">RO</div>
+        </div>
+        </div>
+        </div>
+        
+        ### IA [15:0] Stroom aandrijving    
+        
+        Mogelijke waarden zijn 0-65635 (mA)     
+        
+        
         
