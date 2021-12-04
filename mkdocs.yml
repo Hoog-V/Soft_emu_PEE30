@@ -7,13 +7,17 @@ plugins:
 markdown_extensions:
 - pymdownx.tabbed:
     alternate_style: true 
+- toc
 - tables
 - admonition
 - pymdownx.details
 - pymdownx.superfences
+extra_css:
+ - css/Tabelstyling.css
 
 nav:
     - Home: 'index.md'
+    - 'Omgeving opzetten' : 'omgeving_opzetten.md'
     - 'Layout en navigatie van het emulatie programma': 'Layout_en_navigatie.md'
     - 'Testen':
         - 'MCU emulatie': 'MCU_emulatie.md'

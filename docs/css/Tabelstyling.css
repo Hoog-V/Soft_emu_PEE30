@@ -1,0 +1,45 @@
+.RegisterTabel{
+	display: table;
+	width: 100%;
+}
+.RegisterTabelRij {
+	display: table-row;
+}
+.RegisterTabelHeading {
+	background-color: #EEE;
+	display: table-header-group;
+}
+.RegisterTabelnvt, .RegisterTabelHead {
+	border: 1px solid #999999;
+	display: table-cell;
+	font-size: 150%;
+	background-color: LIGHTGREY;
+	padding: 1px 1px;
+}
+.RegisterTabelLeeg, .RegisterTabelHead {
+	border: 0px;
+	text-align: center;
+	display: table-cell;
+	padding: 3px 30px;
+}
+.RegisterTabelTekst, .RegisterTabelHead {
+	border: 1px solid #999999;
+	text-align: center;
+	display: table-cell;
+	font-size: 90%;
+	padding: 10px 30px;
+}
+.RegisterTabelHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.RegisterTabelFoot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
+}
+.RegisterTabelBody {
+	display: table-row-group;
+}
+

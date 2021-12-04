@@ -11,371 +11,583 @@ In overleg met de projectleiders is er besloten welke data in wel register komt.
         Deze registers zijn van belang omdat er bij de communicatie tussen de onderdelen I2C wordt gebruikt. Waarbij het onderdeel MCU de master is en de belasting en aandrijving de slaves. Elk register heeft specifieke informatie: rendement, vermogen DUT, enz. In welke register welke informatie staat wordt beschreven in een **register map**.
         
         
-## Register map aandrijving
+# Register map aandrijving
+## **Register 0: Status aandrijving**
+#### BIT:
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+ 
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelTekst">Stat</div>
+<div class="RegisterTabelTekst">Stat</div>
+<div class="RegisterTabelTekst">Stat</div>
+        </div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
 
-<style>
-.divTable{
-	display: table;
-	width: 80%;
-}
-.divTableRow {
-	display: table-row;
-}
-.divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
-}
-.divTableCell, .divTableHead {
-	border: 1px solid #999999;
-	display: table-cell;
-	font-size: 150%;
-	background-color: LIGHTGREY;
-	padding: 3px 30px;
-}
-.divTableCellp, .divTableHead {
-	border: 0px;
-	text-align: center;
-	display: table-cell;
-	padding: 3px 30px;
-}
-.divTableCellt, .divTableHead {
-	border: 1px solid #999999;
-	text-align: center;
-	display: table-cell;
-	font-size: 90%;
-	padding: 10px 30px;
-}
-.divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
-	font-weight: bold;
-}
-.divTableFoot {
-	background-color: #EEE;
-	display: table-footer-group;
-	font-weight: bold;
-}
-.divTableBody {
-	display: table-row-group;
-}
-</style>
+###Stat [2:0] Status aandrijving
+     
+Mogelijke status:
+      
+- 0x01 (0b100): Overload
+      
+- 0x02 (0b010): Overvoltage
+      
+- 0x03 (0b110): Noodstop
+        
+- 0x04 (0b001): Gereed, wachtend op start signaal
+       
+- 0x05 (0b101): DUT (Device under test) / Actief
+        
+---
+**RO= Read only**
+      
+**RW= Read/write**
 
-!!! info "Register 0: Status aandrijving"
-        #### Register 0: Status aandrijving
-        #### BIT:
-        <div class="divTable">
-        <div class="divTableBody">
-        <div class="divTableRow">
-        <div class="divTableCellp">15</div>
-        <div class="divTableCellp">14</div>
-        <div class="divTableCellp">13</div>
-        <div class="divTableCellp">12</div>
-        <div class="divTableCellp">11</div>
-        <div class="divTableCellp">10</div>
-        <div class="divTableCellp">9</div>
-        <div class="divTableCellp">8</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        </div>
-        </div>
-        </div>
- 
-        <div class="divTable">
-        <div class="divTableBody">
-        <div class="divTableRow">
-        <div class="divTableCellp">7</div>
-        <div class="divTableCellp">6</div>
-        <div class="divTableCellp">5</div>
-        <div class="divTableCellp">4</div>
-        <div class="divTableCellp">3</div>
-        <div class="divTableCellp">2</div>
-        <div class="divTableCellp">1</div>
-        <div class="divTableCellp">0</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCellt">Stat</div>
-        <div class="divTableCellt">Stat</div>
-        <div class="divTableCellt">Stat</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        </div>
-        </div>
-        </div>
+&nbsp;
 
-        ###Stat [2:0] Status aandrijving
-        
-        Mogelijke status:
-        
-        - 0x01 (0b100): Overload
-        
-        - 0x02 (0b010): Overvoltage
-        
-        - 0x03 (0b110): Noodstop
-        
-        - 0x04 (0b001): Gereed, wachtend op start signaal
-        
-        - 0x05 (0b101): DUT (Device under test) / Actief
-        
-!!! info "Register 1: Rendement aandrijving"
-        #### Register 1: Rendement aandrijving
-        #### BIT:
-        <div class="divTable">
-        <div class="divTableBody">
-        <div class="divTableRow">
-        <div class="divTableCellp">15</div>
-        <div class="divTableCellp">14</div>
-        <div class="divTableCellp">13</div>
-        <div class="divTableCellp">12</div>
-        <div class="divTableCellp">11</div>
-        <div class="divTableCellp">10</div>
-        <div class="divTableCellp">9</div>
-        <div class="divTableCellp">8</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCell">&nbsp;</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        </div>
-        </div>
-        </div>
+## **Register 1: Rendement aandrijving**
+#### BIT:
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
  
-        <div class="divTable">
-        <div class="divTableBody">
-        <div class="divTableRow">
-        <div class="divTableCellp">7</div>
-        <div class="divTableCellp">6</div>
-        <div class="divTableCellp">5</div>
-        <div class="divTableCellp">4</div>
-        <div class="divTableCellp">3</div>
-        <div class="divTableCellp">2</div>
-        <div class="divTableCellp">1</div>
-        <div class="divTableCellp">0</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCell">&nbsp;</div>
-        <div class="divTableCellt">Ren</div>
-        <div class="divTableCellt">Ren</div>
-        <div class="divTableCellt">Ren</div>
-        <div class="divTableCellt">Ren</div>
-        <div class="divTableCellt">Ren</div>
-        <div class="divTableCellt">Ren</div>
-        <div class="divTableCellt">Ren</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        </div>
-        </div>
-        </div>
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelTekst">Ren</div>
+<div class="RegisterTabelTekst">Ren</div>
+<div class="RegisterTabelTekst">Ren</div>
+<div class="RegisterTabelTekst">Ren</div>
+<div class="RegisterTabelTekst">Ren</div>
+<div class="RegisterTabelTekst">Ren</div>
+<div class="RegisterTabelTekst">Ren</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+
+### Ren [6:0] Rendement aandrijving 
         
-        ### Ren [6:0] Rendement aandrijving 
+Mogelijke waarden zijn theoretisch mogelijk van 0-127. 
+Echter wordt alleen het bereik van 0-100(%) gebruikt.
+
+---
+**RO= Read only**
         
-        Mogelijke waarden zijn theoretisch mogelijk van 0-127. 
-        Echter wordt alleen het bereik van 0-100(%) gebruikt.
-        
-!!! info "Register 2: Stroom aandrijving"
-        #### Register 1: Stroom aandrijving
-        <div class="divTable">
-        <div class="divTableBody">
-        <div class="divTableRow">
-        <div class="divTableCellp">15</div>
-        <div class="divTableCellp">14</div>
-        <div class="divTableCellp">13</div>
-        <div class="divTableCellp">12</div>
-        <div class="divTableCellp">11</div>
-        <div class="divTableCellp">10</div>
-        <div class="divTableCellp">9</div>
-        <div class="divTableCellp">8</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        </div>
-        </div>
-        </div>
+**RW= Read/write**
+
+&nbsp;
+## **Register 2: Stroom aandrijving**
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelTekst">IA</div>
+<div class="RegisterTabelTekst">IA</div>
+<div class="RegisterTabelTekst">IA</div>
+<div class="RegisterTabelTekst">IA</div>
+<div class="RegisterTabelTekst">IA</div>
+<div class="RegisterTabelTekst">IA</div>
+<div class="RegisterTabelTekst">IA</div>
+<div class="RegisterTabelTekst">IA</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
  
-        <div class="divTable">
-        <div class="divTableBody">
-        <div class="divTableRow">
-        <div class="divTableCellp">7</div>
-        <div class="divTableCellp">6</div>
-        <div class="divTableCellp">5</div>
-        <div class="divTableCellp">4</div>
-        <div class="divTableCellp">3</div>
-        <div class="divTableCellp">2</div>
-        <div class="divTableCellp">1</div>
-        <div class="divTableCellp">0</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA.</div>
-        <div class="divTableCellt">IA.</div>
-        <div class="divTableCellt">IA.</div>
-        <div class="divTableCellt">IA.</div>
-        <div class="divTableCellt">IA.</div>
-        <div class="divTableCellt">IA.</div>
-        <div class="divTableCellt">IA.</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        </div>
-        </div>
-        </div>
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelTekst">IA</div>
+<div class="RegisterTabelTekst">IA.</div>
+<div class="RegisterTabelTekst">IA.</div>
+<div class="RegisterTabelTekst">IA.</div>
+<div class="RegisterTabelTekst">IA.</div>
+<div class="RegisterTabelTekst">IA.</div>
+<div class="RegisterTabelTekst">IA.</div>
+<div class="RegisterTabelTekst">IA.</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
         
-        ### IA [15:0] Stroom aandrijving    
+### IA [15:0] Stroom aandrijving    
         
-        Mogelijke waarden zijn 0-65635 (mA)
+Mogelijke waarden zijn 0-65635 (mA)
         
-!!! info "Register 3: Stroom aandrijving"
-        #### Register 1: Stroom aandrijving
-        <div class="divTable">
-        <div class="divTableBody">
-        <div class="divTableRow">
-        <div class="divTableCellp">15</div>
-        <div class="divTableCellp">14</div>
-        <div class="divTableCellp">13</div>
-        <div class="divTableCellp">12</div>
-        <div class="divTableCellp">11</div>
-        <div class="divTableCellp">10</div>
-        <div class="divTableCellp">9</div>
-        <div class="divTableCellp">8</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        </div>
-        </div>
-        </div>
+---
+**RO= Read only**
+        
+**RW= Read/write**
+&nbsp;
+        
+## **Register 3: Spanning aandrijving**
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelTekst">UA</div>
+<div class="RegisterTabelTekst">UA</div>
+<div class="RegisterTabelTekst">UA</div>
+<div class="RegisterTabelTekst">UA</div>
+<div class="RegisterTabelTekst">UA</div>
+<div class="RegisterTabelTekst">UA</div>
+<div class="RegisterTabelTekst">UA</div>
+<div class="RegisterTabelTekst">UA</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
  
-        <div class="divTable">
-        <div class="divTableBody">
-        <div class="divTableRow">
-        <div class="divTableCellp">7</div>
-        <div class="divTableCellp">6</div>
-        <div class="divTableCellp">5</div>
-        <div class="divTableCellp">4</div>
-        <div class="divTableCellp">3</div>
-        <div class="divTableCellp">2</div>
-        <div class="divTableCellp">1</div>
-        <div class="divTableCellp">0</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCellt">IA</div>
-        <div class="divTableCellt">IA.</div>
-        <div class="divTableCellt">IA.</div>
-        <div class="divTableCellt">IA.</div>
-        <div class="divTableCellt">IA.</div>
-        <div class="divTableCellt">IA.</div>
-        <div class="divTableCellt">IA.</div>
-        <div class="divTableCellt">IA.</div>
-        </div>
-        <div class="divTableRow">
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        <div class="divTableCellp">RO</div>
-        </div>
-        </div>
-        </div>
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelTekst">UA</div>
+<div class="RegisterTabelTekst">UA.</div>
+<div class="RegisterTabelTekst">UA.</div>
+<div class="RegisterTabelTekst">UA.</div>
+<div class="RegisterTabelTekst">UA.</div>
+<div class="RegisterTabelTekst">UA.</div>
+<div class="RegisterTabelTekst">UA.</div>
+<div class="RegisterTabelTekst">UA.</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
         
-        ### IA [15:0] Stroom aandrijving    
+### UA [15:0] Spanning aandrijving    
         
-        Mogelijke waarden zijn 0-65635 (mA)     
+Mogelijke waarden zijn 0-15000 (mV)     
+        
+---
+**RO= Read only**
+       
+**RW= Read/write**
+
+---
+## Register 4: Snelheid aandrijving
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+ 
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+<div class="RegisterTabelTekst">Snl</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+        
+### Snl [15:0] Snelheid aandrijving    
+        
+Mogelijke waarden zijn 0-10000 (RPM)       
+        
+---
+**RO= Read only**
+        
+**RW= Read/write**
+
+        
+## Register 5: Start register
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+</div>
+</div>
+</div>
+ 
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelTekst">Start</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+</div>
+</div>
+</div>
+        
+### Snl [15:0] Snelheid aandrijving    
+       
+Mogelijke waarden zijn 0-10000 (RPM)       
+        
+---
+**RO= Read only**
+     
+**RW= Read/write**
         
         
+## Register 6: Maximale stroom setpoint
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+</div>
+</div>
+</div>
+ 
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+<div class="RegisterTabelTekst">Im</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
         
+### Snl [15:0] Snelheid aandrijving    
+        
+Mogelijke waarden zijn 0-10000 (RPM)
+        
+---
+**RO= Read only**
+
+**RW= Read/write**

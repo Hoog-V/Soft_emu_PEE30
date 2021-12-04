@@ -1,5 +1,6 @@
 # Bijdragers
 
-###Er is op dit moment meer één persoon die aan deze GitHub repo heeft bijgedragen.
+###Er zijn twee personen die aan deze GitHub repo (inclusief documentatie) hebben bijgedragen.
 
-###Dat is [Victor Hogeweij/Hoog-V](https://github.com/Hoog-V).
+###Dat zijn Dennis Boekholtz.
+###en [Victor Hogeweij/Hoog-V](https://github.com/Hoog-V)

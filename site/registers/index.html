@@ -1,0 +1,1107 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.2">
+    
+    
+      
+        <title>Registers en slave adressen I2C - Software emulator PEE30</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.816931ca.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9204c3b2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"..":".."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#registers-en-slave-adressen-i2c" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Software emulator PEE30" class="md-header__button md-logo" aria-label="Software emulator PEE30" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software emulator PEE30
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Registers en slave adressen I2C
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Software emulator PEE30" class="md-nav__button md-logo" aria-label="Software emulator PEE30" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Software emulator PEE30
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Layout_en_navigatie/" class="md-nav__link">
+        Layout en navigatie van het emulatie programma
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Testen
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Testen" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Testen
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MCU_emulatie/" class="md-nav__link">
+        MCU emulatie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aandrijving_emulatie/" class="md-nav__link">
+        Aandrijving emulatie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../belasting_emulatie/" class="md-nav__link">
+        Belasting emulatie
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Datacommunicatie
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Datacommunicatie" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Datacommunicatie
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../afspraken_datacommunicatie/" class="md-nav__link">
+        Afspraken datacommunicatie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pin_out_breakoutbord/" class="md-nav__link">
+        Pin-out Breakoutbord
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Registers en slave adressen I2C
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Registers en slave adressen I2C
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#register-map-aandrijving" class="md-nav__link">
+    Register map aandrijving
+  </a>
+  
+    <nav class="md-nav" aria-label="Register map aandrijving">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-0-status-aandrijving" class="md-nav__link">
+    Register 0: Status aandrijving
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bit" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stat-20-status-aandrijving" class="md-nav__link">
+    Stat [2:0] Status aandrijving
+  </a>
+  
+    <nav class="md-nav" aria-label="Stat [2:0] Status aandrijving">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-1-rendement-aandrijving" class="md-nav__link">
+    Register 1: Rendement aandrijving
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bit_1" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ren-60-rendement-aandrijving" class="md-nav__link">
+    Ren [6:0] Rendement aandrijving
+  </a>
+  
+    <nav class="md-nav" aria-label="Ren [6:0] Rendement aandrijving">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-1-stroom-aandrijving" class="md-nav__link">
+    Register 1: Stroom aandrijving
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ia-150-stroom-aandrijving" class="md-nav__link">
+    IA [15:0] Stroom aandrijving
+  </a>
+  
+    <nav class="md-nav" aria-label="IA [15:0] Stroom aandrijving">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-1-stroom-aandrijving_1" class="md-nav__link">
+    Register 1: Stroom aandrijving
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ia-150-stroom-aandrijving_1" class="md-nav__link">
+    IA [15:0] Stroom aandrijving
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Over het project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Over het project" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Over het project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        Licentie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bijdragers/" class="md-nav__link">
+        Bijdragers/Contribuanten
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#register-map-aandrijving" class="md-nav__link">
+    Register map aandrijving
+  </a>
+  
+    <nav class="md-nav" aria-label="Register map aandrijving">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-0-status-aandrijving" class="md-nav__link">
+    Register 0: Status aandrijving
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bit" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stat-20-status-aandrijving" class="md-nav__link">
+    Stat [2:0] Status aandrijving
+  </a>
+  
+    <nav class="md-nav" aria-label="Stat [2:0] Status aandrijving">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-1-rendement-aandrijving" class="md-nav__link">
+    Register 1: Rendement aandrijving
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bit_1" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ren-60-rendement-aandrijving" class="md-nav__link">
+    Ren [6:0] Rendement aandrijving
+  </a>
+  
+    <nav class="md-nav" aria-label="Ren [6:0] Rendement aandrijving">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-1-stroom-aandrijving" class="md-nav__link">
+    Register 1: Stroom aandrijving
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ia-150-stroom-aandrijving" class="md-nav__link">
+    IA [15:0] Stroom aandrijving
+  </a>
+  
+    <nav class="md-nav" aria-label="IA [15:0] Stroom aandrijving">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#register-1-stroom-aandrijving_1" class="md-nav__link">
+    Register 1: Stroom aandrijving
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ia-150-stroom-aandrijving_1" class="md-nav__link">
+    IA [15:0] Stroom aandrijving
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="registers-en-slave-adressen-i2c">Registers en slave-adressen I2C</h1>
+<p>In overleg met de projectleiders is er besloten welke data in wel register komt.</p>
+<div class="admonition note">
+<p class="admonition-title">Wat wordt er bedoeld met een register en waarvoor is het nodig?<p>Bij I2C communicatie is er altijd een master en een slave apparaat. 
+Waarbij de master beslist met welk apparaat er gesproken wordt. De slave heeft hier geen zeggenschap over. De enige taak van een slave apparaat is reageren als een stuk aanroepbaar geheugen. Het stuk aanroepbaar geheugen van de slave is onderverdeeld in een aantal geheugenplaatsen deze geheugenplaatsen worden registers genoemd. Deze registers houden in dit geval 2 bytes (16-bits waarden). Naar deze geheugenplaatsen kan door het master apparaat geschreven of gelezen worden.
+Het speciferen naar welk register de master wil schrijven of lezen geeft de master aan met een verzoek aan het slave-apparaat. 
+Vervolgens krijgt de master of de data opgestuurd of zet de master zelf de data op de databus afhankelijk of het een schrijf- of leesverzoek is.</p>
+<p>Deze registers zijn van belang omdat er bij de communicatie tussen de onderdelen I2C wordt gebruikt. Waarbij het onderdeel MCU de master is en de belasting en aandrijving de slaves. Elk register heeft specifieke informatie: rendement, vermogen DUT, enz. In welke register welke informatie staat wordt beschreven in een <strong>register map</strong>.</p>
+</p>
+</div>
+<h2 id="register-map-aandrijving">Register map aandrijving</h2>
+<style>
+.divTable{
+    display: table;
+    width: 80%;
+}
+.divTableRow {
+    display: table-row;
+}
+.divTableHeading {
+    background-color: #EEE;
+    display: table-header-group;
+}
+.divTableCell, .divTableHead {
+    border: 1px solid #999999;
+    display: table-cell;
+    font-size: 150%;
+    background-color: LIGHTGREY;
+    padding: 3px 30px;
+}
+.divTableCellp, .divTableHead {
+    border: 0px;
+    text-align: center;
+    display: table-cell;
+    padding: 3px 30px;
+}
+.divTableCellt, .divTableHead {
+    border: 1px solid #999999;
+    text-align: center;
+    display: table-cell;
+    font-size: 90%;
+    padding: 10px 30px;
+}
+.divTableHeading {
+    background-color: #EEE;
+    display: table-header-group;
+    font-weight: bold;
+}
+.divTableFoot {
+    background-color: #EEE;
+    display: table-footer-group;
+    font-weight: bold;
+}
+.divTableBody {
+    display: table-row-group;
+}
+</style>
+
+<div class="admonition info">
+<p class="admonition-title">Register 0: Status aandrijving<h4 id="register-0-status-aandrijving">Register 0: Status aandrijving</h4>
+<h4 id="bit">BIT:</h4>
+<p><div class="divTable">
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCellp">15</div>
+<div class="divTableCellp">14</div>
+<div class="divTableCellp">13</div>
+<div class="divTableCellp">12</div>
+<div class="divTableCellp">11</div>
+<div class="divTableCellp">10</div>
+<div class="divTableCellp">9</div>
+<div class="divTableCellp">8</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+</div>
+</div>
+</div></p>
+<p><div class="divTable">
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCellp">7</div>
+<div class="divTableCellp">6</div>
+<div class="divTableCellp">5</div>
+<div class="divTableCellp">4</div>
+<div class="divTableCellp">3</div>
+<div class="divTableCellp">2</div>
+<div class="divTableCellp">1</div>
+<div class="divTableCellp">0</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCellt">Stat</div>
+<div class="divTableCellt">Stat</div>
+<div class="divTableCellt">Stat</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+</div>
+</div>
+</div></p>
+<h3 id="stat-20-status-aandrijving">Stat [2:0] Status aandrijving</h3>
+<p>Mogelijke status:</p>
+<ul>
+<li>
+<p>0x01 (0b100): Overload</p>
+</li>
+<li>
+<p>0x02 (0b010): Overvoltage</p>
+</li>
+<li>
+<p>0x03 (0b110): Noodstop</p>
+</li>
+<li>
+<p>0x04 (0b001): Gereed, wachtend op start signaal</p>
+</li>
+<li>
+<p>0x05 (0b101): DUT (Device under test) / Actief</p>
+</li>
+</ul>
+</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Register 1: Rendement aandrijving<h4 id="register-1-rendement-aandrijving">Register 1: Rendement aandrijving</h4>
+<h4 id="bit_1">BIT:</h4>
+<p><div class="divTable">
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCellp">15</div>
+<div class="divTableCellp">14</div>
+<div class="divTableCellp">13</div>
+<div class="divTableCellp">12</div>
+<div class="divTableCellp">11</div>
+<div class="divTableCellp">10</div>
+<div class="divTableCellp">9</div>
+<div class="divTableCellp">8</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCell">&nbsp;</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+</div>
+</div>
+</div></p>
+<p><div class="divTable">
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCellp">7</div>
+<div class="divTableCellp">6</div>
+<div class="divTableCellp">5</div>
+<div class="divTableCellp">4</div>
+<div class="divTableCellp">3</div>
+<div class="divTableCellp">2</div>
+<div class="divTableCellp">1</div>
+<div class="divTableCellp">0</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">&nbsp;</div>
+<div class="divTableCellt">Ren</div>
+<div class="divTableCellt">Ren</div>
+<div class="divTableCellt">Ren</div>
+<div class="divTableCellt">Ren</div>
+<div class="divTableCellt">Ren</div>
+<div class="divTableCellt">Ren</div>
+<div class="divTableCellt">Ren</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+</div>
+</div>
+</div></p>
+<h3 id="ren-60-rendement-aandrijving">Ren [6:0] Rendement aandrijving</h3>
+<p>Mogelijke waarden zijn theoretisch mogelijk van 0-127. 
+Echter wordt alleen het bereik van 0-100(%) gebruikt.</p>
+</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Register 2: Stroom aandrijving<h4 id="register-1-stroom-aandrijving">Register 1: Stroom aandrijving</h4>
+<p><div class="divTable">
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCellp">15</div>
+<div class="divTableCellp">14</div>
+<div class="divTableCellp">13</div>
+<div class="divTableCellp">12</div>
+<div class="divTableCellp">11</div>
+<div class="divTableCellp">10</div>
+<div class="divTableCellp">9</div>
+<div class="divTableCellp">8</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+</div>
+</div>
+</div></p>
+<p><div class="divTable">
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCellp">7</div>
+<div class="divTableCellp">6</div>
+<div class="divTableCellp">5</div>
+<div class="divTableCellp">4</div>
+<div class="divTableCellp">3</div>
+<div class="divTableCellp">2</div>
+<div class="divTableCellp">1</div>
+<div class="divTableCellp">0</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA.</div>
+<div class="divTableCellt">IA.</div>
+<div class="divTableCellt">IA.</div>
+<div class="divTableCellt">IA.</div>
+<div class="divTableCellt">IA.</div>
+<div class="divTableCellt">IA.</div>
+<div class="divTableCellt">IA.</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+</div>
+</div>
+</div></p>
+<h3 id="ia-150-stroom-aandrijving">IA [15:0] Stroom aandrijving</h3>
+<p>Mogelijke waarden zijn 0-65635 (mA)</p>
+</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Register 3: Stroom aandrijving<h4 id="register-1-stroom-aandrijving_1">Register 1: Stroom aandrijving</h4>
+<p><div class="divTable">
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCellp">15</div>
+<div class="divTableCellp">14</div>
+<div class="divTableCellp">13</div>
+<div class="divTableCellp">12</div>
+<div class="divTableCellp">11</div>
+<div class="divTableCellp">10</div>
+<div class="divTableCellp">9</div>
+<div class="divTableCellp">8</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+</div>
+</div>
+</div></p>
+<p><div class="divTable">
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCellp">7</div>
+<div class="divTableCellp">6</div>
+<div class="divTableCellp">5</div>
+<div class="divTableCellp">4</div>
+<div class="divTableCellp">3</div>
+<div class="divTableCellp">2</div>
+<div class="divTableCellp">1</div>
+<div class="divTableCellp">0</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCellt">IA</div>
+<div class="divTableCellt">IA.</div>
+<div class="divTableCellt">IA.</div>
+<div class="divTableCellt">IA.</div>
+<div class="divTableCellt">IA.</div>
+<div class="divTableCellt">IA.</div>
+<div class="divTableCellt">IA.</div>
+<div class="divTableCellt">IA.</div>
+</div>
+<div class="divTableRow">
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+<div class="divTableCellp">RO</div>
+</div>
+</div>
+</div></p>
+<h3 id="ia-150-stroom-aandrijving_1">IA [15:0] Stroom aandrijving</h3>
+<p>Mogelijke waarden zijn 0-65635 (mA)     </p>
+</p>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../pin_out_breakoutbord/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pin-out Breakoutbord" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Pin-out Breakoutbord
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../license/" class="md-footer__link md-footer__link--next" aria-label="Next: Licentie" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Licentie
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.01824240.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ff0eccb3.min.js"></script>
+      
+    
+  </body>
+</html>
