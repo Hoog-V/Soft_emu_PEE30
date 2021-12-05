@@ -1,0 +1,1814 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.2">
+    
+    
+      
+        <title>I2C Registermap belasting - Software emulator PEE30</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.816931ca.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9204c3b2.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/Tabelstyling.css">
+    
+    <script>function __md_scope(e,t,_){return new URL(_||(t===localStorage?"..":".."),location).pathname+"."+e}function __md_get(e,t=localStorage,_){return JSON.parse(t.getItem(__md_scope(e,t,_)))}function __md_set(e,t,_=localStorage,o){try{_.setItem(__md_scope(e,_,o),JSON.stringify(t))}catch(e){}}</script>
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#register-map-belastingi2c" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Software emulator PEE30" class="md-header__button md-logo" aria-label="Software emulator PEE30" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software emulator PEE30
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              I2C Registermap belasting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Software emulator PEE30" class="md-nav__button md-logo" aria-label="Software emulator PEE30" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Software emulator PEE30
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../omgeving_opzetten/" class="md-nav__link">
+        Omgeving opzetten
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Layout_en_navigatie/" class="md-nav__link">
+        Layout en navigatie van het emulatie programma
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Testen
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Testen" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Testen
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MCU_emulatie/" class="md-nav__link">
+        MCU emulatie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aandrijving_emulatie/" class="md-nav__link">
+        Aandrijving emulatie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../belasting_emulatie/" class="md-nav__link">
+        Belasting emulatie
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Datacommunicatie
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Datacommunicatie" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Datacommunicatie
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../afspraken_datacommunicatie/" class="md-nav__link">
+        Afspraken datacommunicatie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pin_out_breakoutbord/" class="md-nav__link">
+        Pin-out Breakoutbord
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          Registers en slave adressen I2C
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Registers en slave adressen I2C" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Registers en slave adressen I2C
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../registers/" class="md-nav__link">
+        Uitleg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../registers_aandrijving/" class="md-nav__link">
+        I2C Registermap aandrijving
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          I2C Registermap belasting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        I2C Registermap belasting
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#register-0-status-belasting" class="md-nav__link">
+    Register 0: Status belasting
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 0: Status belasting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stat-20-status-belasting" class="md-nav__link">
+    Stat [2:0] Status belasting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-1-rendement-belasting" class="md-nav__link">
+    Register 1: Rendement belasting
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 1: Rendement belasting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_1" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ren-60-rendement-belasting" class="md-nav__link">
+    Ren [6:0] Rendement belasting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-2-temperatuur-belasting" class="md-nav__link">
+    Register 2: Temperatuur belasting
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 2: Temperatuur belasting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_2" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temp-60-temperatuur-belasting" class="md-nav__link">
+    Temp [6:0] Temperatuur belasting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-3-koppel-belasting-motor" class="md-nav__link">
+    Register 3: Koppel belasting motor
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 3: Koppel belasting motor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_3" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kopb-70-koppel-belasting-motor" class="md-nav__link">
+    Kopb [7:0] Koppel belasting motor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-4-vermogen-belasting-motor" class="md-nav__link">
+    Register 4: Vermogen belasting motor
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 4: Vermogen belasting motor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_4" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pb-70-vermogen-belasting" class="md-nav__link">
+    Pb [7:0] Vermogen belasting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-5-maximale-temperatuur-instelling" class="md-nav__link">
+    Register 5: Maximale temperatuur instelling
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 5: Maximale temperatuur instelling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_5" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tm-70-maximale-temperatuur-instelling" class="md-nav__link">
+    Tm [7:0] Maximale temperatuur instelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-6-maximale-snelheid-instelling" class="md-nav__link">
+    Register 6: Maximale snelheid instelling
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 6: Maximale snelheid instelling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_6" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spm-130-maximale-snelheid-instelling" class="md-nav__link">
+    Spm [13:0] Maximale snelheid instelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-7-maximale-vermogen-instelling" class="md-nav__link">
+    Register 7: Maximale vermogen instelling
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 7: Maximale vermogen instelling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_7" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pbm-70-maximale-vermogen-instelling" class="md-nav__link">
+    Pbm [7:0] Maximale vermogen instelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-8-vermogen-instelling" class="md-nav__link">
+    Register 8: Vermogen instelling
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 8: Vermogen instelling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_8" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pbs-70-maximale-vermogen-instelling" class="md-nav__link">
+    Pbs [7:0] Maximale vermogen instelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Over het project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Over het project" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Over het project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        Licentie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bijdragers/" class="md-nav__link">
+        Bijdragers/Contribuanten
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#register-0-status-belasting" class="md-nav__link">
+    Register 0: Status belasting
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 0: Status belasting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stat-20-status-belasting" class="md-nav__link">
+    Stat [2:0] Status belasting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-1-rendement-belasting" class="md-nav__link">
+    Register 1: Rendement belasting
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 1: Rendement belasting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_1" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ren-60-rendement-belasting" class="md-nav__link">
+    Ren [6:0] Rendement belasting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-2-temperatuur-belasting" class="md-nav__link">
+    Register 2: Temperatuur belasting
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 2: Temperatuur belasting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_2" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temp-60-temperatuur-belasting" class="md-nav__link">
+    Temp [6:0] Temperatuur belasting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-3-koppel-belasting-motor" class="md-nav__link">
+    Register 3: Koppel belasting motor
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 3: Koppel belasting motor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_3" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kopb-70-koppel-belasting-motor" class="md-nav__link">
+    Kopb [7:0] Koppel belasting motor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-4-vermogen-belasting-motor" class="md-nav__link">
+    Register 4: Vermogen belasting motor
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 4: Vermogen belasting motor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_4" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pb-70-vermogen-belasting" class="md-nav__link">
+    Pb [7:0] Vermogen belasting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-5-maximale-temperatuur-instelling" class="md-nav__link">
+    Register 5: Maximale temperatuur instelling
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 5: Maximale temperatuur instelling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_5" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tm-70-maximale-temperatuur-instelling" class="md-nav__link">
+    Tm [7:0] Maximale temperatuur instelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-6-maximale-snelheid-instelling" class="md-nav__link">
+    Register 6: Maximale snelheid instelling
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 6: Maximale snelheid instelling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_6" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spm-130-maximale-snelheid-instelling" class="md-nav__link">
+    Spm [13:0] Maximale snelheid instelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-7-maximale-vermogen-instelling" class="md-nav__link">
+    Register 7: Maximale vermogen instelling
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 7: Maximale vermogen instelling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_7" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pbm-70-maximale-vermogen-instelling" class="md-nav__link">
+    Pbm [7:0] Maximale vermogen instelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-8-vermogen-instelling" class="md-nav__link">
+    Register 8: Vermogen instelling
+  </a>
+  
+    <nav class="md-nav" aria-label="Register 8: Vermogen instelling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bit_8" class="md-nav__link">
+    BIT:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pbs-70-maximale-vermogen-instelling" class="md-nav__link">
+    Pbs [7:0] Maximale vermogen instelling
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="register-map-belastingi2c">Register map belasting(I2C)</h1>
+<h2 id="register-0-status-belasting"><strong>Register 0: Status belasting</strong></h2>
+<h4 id="bit">BIT:</h4>
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelTekst">Stat</div>
+<div class="RegisterTabelTekst">Stat</div>
+<div class="RegisterTabelTekst">Stat</div>
+        </div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+
+<h3 id="stat-20-status-belasting">Stat [2:0] Status belasting</h3>
+<p>Mogelijke status:</p>
+<ul>
+<li>
+<p>0x01 (0b100): Overload</p>
+</li>
+<li>
+<p>0x02 (0b010): Overspeed</p>
+</li>
+<li>
+<p>0x03 (0b110): Overheat</p>
+</li>
+<li>
+<p>0x04 (0b001): Noodstop</p>
+</li>
+<li>
+<p>0x05 (0b101): Gereed, wachtend op start signaal</p>
+</li>
+<li>
+<p>0x06 (0b011): DUT (Device under test) / Actief</p>
+</li>
+</ul>
+<hr />
+<p><strong>RO= Read only</strong></p>
+<p><strong>RW= Read/write</strong></p>
+<h2 id="register-1-rendement-belasting"><strong>Register 1: Rendement belasting</strong></h2>
+<h4 id="bit_1">BIT:</h4>
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelTekst">Ren</div>
+<div class="RegisterTabelTekst">Ren</div>
+<div class="RegisterTabelTekst">Ren</div>
+<div class="RegisterTabelTekst">Ren</div>
+<div class="RegisterTabelTekst">Ren</div>
+<div class="RegisterTabelTekst">Ren</div>
+<div class="RegisterTabelTekst">Ren</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+
+<h3 id="ren-60-rendement-belasting">Ren [6:0] Rendement belasting</h3>
+<p>Mogelijke waarden zijn theoretisch mogelijk van 0-127. 
+Echter wordt alleen het bereik van 0-100(%) gebruikt.</p>
+<hr />
+<p><strong>RO= Read only</strong></p>
+<p><strong>RW= Read/write</strong></p>
+<h2 id="register-2-temperatuur-belasting"><strong>Register 2: Temperatuur belasting</strong></h2>
+<h4 id="bit_2">BIT:</h4>
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelTekst">Temp</div>
+<div class="RegisterTabelTekst">Temp</div>
+<div class="RegisterTabelTekst">Temp</div>
+<div class="RegisterTabelTekst">Temp</div>
+<div class="RegisterTabelTekst">Temp</div>
+<div class="RegisterTabelTekst">Temp</div>
+<div class="RegisterTabelTekst">Temp</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+
+<h3 id="temp-60-temperatuur-belasting">Temp [6:0] Temperatuur belasting</h3>
+<p>Mogelijke waarden zijn theoretisch mogelijk van 0-127. 
+Echter wordt alleen het bereik van 0-100(°) gebruikt.</p>
+<hr />
+<p><strong>RO= Read only</strong></p>
+<p><strong>RW= Read/write</strong></p>
+<h2 id="register-3-koppel-belasting-motor"><strong>Register 3: Koppel belasting motor</strong></h2>
+<h4 id="bit_3">BIT:</h4>
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelTekst">Kopb</div>
+<div class="RegisterTabelTekst">Kopb</div>
+<div class="RegisterTabelTekst">Kopb</div>
+<div class="RegisterTabelTekst">Kopb</div>
+<div class="RegisterTabelTekst">Kopb</div>
+<div class="RegisterTabelTekst">Kopb</div>
+<div class="RegisterTabelTekst">Kopb</div>
+<div class="RegisterTabelTekst">Kopb</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+
+<h3 id="kopb-70-koppel-belasting-motor">Kopb [7:0] Koppel belasting motor</h3>
+<p>Mogelijke waarden zijn 0-256 (Nm). </p>
+<hr />
+<p><strong>RO= Read only</strong></p>
+<p><strong>RW= Read/write</strong></p>
+<h2 id="register-4-vermogen-belasting-motor"><strong>Register 4: Vermogen belasting motor</strong></h2>
+<h4 id="bit_4">BIT:</h4>
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelTekst">Pb</div>
+<div class="RegisterTabelTekst">Pb</div>
+<div class="RegisterTabelTekst">Pb</div>
+<div class="RegisterTabelTekst">Pb</div>
+<div class="RegisterTabelTekst">Pb</div>
+<div class="RegisterTabelTekst">Pb</div>
+<div class="RegisterTabelTekst">Pb</div>
+<div class="RegisterTabelTekst">Pb</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+<div class="RegisterTabelLeeg">RO</div>
+</div>
+</div>
+</div>
+
+<h3 id="pb-70-vermogen-belasting">Pb [7:0] Vermogen belasting</h3>
+<p>Mogelijke waarden zijn 0-256 (W). </p>
+<hr />
+<p><strong>RO= Read only</strong></p>
+<p><strong>RW= Read/write</strong></p>
+<h2 id="register-5-maximale-temperatuur-instelling"><strong>Register 5: Maximale temperatuur instelling</strong></h2>
+<h4 id="bit_5">BIT:</h4>
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+</div>
+</div>
+</div>
+
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelTekst">Tm</div>
+<div class="RegisterTabelTekst">Tm</div>
+<div class="RegisterTabelTekst">Tm</div>
+<div class="RegisterTabelTekst">Tm</div>
+<div class="RegisterTabelTekst">Tm</div>
+<div class="RegisterTabelTekst">Tm</div>
+<div class="RegisterTabelTekst">Tm</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+</div>
+</div>
+</div>
+
+<h3 id="tm-70-maximale-temperatuur-instelling">Tm [7:0] Maximale temperatuur instelling</h3>
+<p>Mogelijke waarden zijn 0-127 (°). </p>
+<hr />
+<p><strong>RO= Read only</strong></p>
+<p><strong>RW= Read/write</strong></p>
+<h2 id="register-6-maximale-snelheid-instelling"><strong>Register 6: Maximale snelheid instelling</strong></h2>
+<h4 id="bit_6">BIT:</h4>
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelTekst">Spm</div>
+<div class="RegisterTabelTekst">Spm</div>
+<div class="RegisterTabelTekst">Spm</div>
+<div class="RegisterTabelTekst">Spm</div>
+<div class="RegisterTabelTekst">Spm</div>
+<div class="RegisterTabelTekst">Spm</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+</div>
+</div>
+</div>
+
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelTekst">Spm</div>
+<div class="RegisterTabelTekst">Spm</div>
+<div class="RegisterTabelTekst">Spm</div>
+<div class="RegisterTabelTekst">Spm</div>
+<div class="RegisterTabelTekst">Spm</div>
+<div class="RegisterTabelTekst">Spm</div>
+<div class="RegisterTabelTekst">Spm</div>
+<div class="RegisterTabelTekst">Spm</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+</div>
+</div>
+</div>
+
+<h3 id="spm-130-maximale-snelheid-instelling">Spm [13:0] Maximale snelheid instelling</h3>
+<p>De mogelijke waarden voor dit register zijn: 0-10000(RPM)</p>
+<p>Alle getallen die boven de 10000 zitten worden uit veiligheid voor de hardware genegeerd. </p>
+<hr />
+<p><strong>RO= Read only</strong></p>
+<p><strong>RW= Read/write</strong></p>
+<h2 id="register-7-maximale-vermogen-instelling"><strong>Register 7: Maximale vermogen instelling</strong></h2>
+<h4 id="bit_7">BIT:</h4>
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+</div>
+</div>
+</div>
+
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelTekst">Pbm</div>
+<div class="RegisterTabelTekst">Pbm</div>
+<div class="RegisterTabelTekst">Pbm</div>
+<div class="RegisterTabelTekst">Pbm</div>
+<div class="RegisterTabelTekst">Pbm</div>
+<div class="RegisterTabelTekst">Pbm</div>
+<div class="RegisterTabelTekst">Pbm</div>
+<div class="RegisterTabelTekst">Pbm</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+</div>
+</div>
+</div>
+
+<h3 id="pbm-70-maximale-vermogen-instelling">Pbm [7:0] Maximale vermogen instelling</h3>
+<p>Mogelijke waarden zijn 0-256 (W). </p>
+<hr />
+<p><strong>RO= Read only</strong></p>
+<p><strong>RW= Read/write</strong></p>
+<h2 id="register-8-vermogen-instelling"><strong>Register 8: Vermogen instelling</strong></h2>
+<h4 id="bit_8">BIT:</h4>
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">15</div>
+<div class="RegisterTabelLeeg">14</div>
+<div class="RegisterTabelLeeg">13</div>
+<div class="RegisterTabelLeeg">12</div>
+<div class="RegisterTabelLeeg">11</div>
+<div class="RegisterTabelLeeg">10</div>
+<div class="RegisterTabelLeeg">9</div>
+<div class="RegisterTabelLeeg">8</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+<div class="RegisterTabelnvt">&nbsp;</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+</div>
+</div>
+</div>
+
+<div class="RegisterTabel">
+<div class="RegisterTabelBody">
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">7</div>
+<div class="RegisterTabelLeeg">6</div>
+<div class="RegisterTabelLeeg">5</div>
+<div class="RegisterTabelLeeg">4</div>
+<div class="RegisterTabelLeeg">3</div>
+<div class="RegisterTabelLeeg">2</div>
+<div class="RegisterTabelLeeg">1</div>
+<div class="RegisterTabelLeeg">0</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelTekst">Pbs</div>
+<div class="RegisterTabelTekst">Pbs</div>
+<div class="RegisterTabelTekst">Pbs</div>
+<div class="RegisterTabelTekst">Pbs</div>
+<div class="RegisterTabelTekst">Pbs</div>
+<div class="RegisterTabelTekst">Pbs</div>
+<div class="RegisterTabelTekst">Pbs</div>
+<div class="RegisterTabelTekst">Pbs</div>
+</div>
+<div class="RegisterTabelRij">
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+<div class="RegisterTabelLeeg">R/W</div>
+</div>
+</div>
+</div>
+
+<h3 id="pbs-70-maximale-vermogen-instelling">Pbs [7:0] Maximale vermogen instelling</h3>
+<p>Mogelijke waarden zijn 0-256 (W). </p>
+<hr />
+<p><strong>RO= Read only</strong></p>
+<p><strong>RW= Read/write</strong></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../registers_aandrijving/" class="md-footer__link md-footer__link--prev" aria-label="Previous: I2C Registermap aandrijving" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              I2C Registermap aandrijving
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../license/" class="md-footer__link md-footer__link--next" aria-label="Next: Licentie" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Licentie
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.01824240.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ff0eccb3.min.js"></script>
+      
+    
+  </body>
+</html>

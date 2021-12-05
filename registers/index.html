@@ -13,7 +13,7 @@
     
     
       
-        <title>Registers en slave adressen I2C - Software emulator PEE30</title>
+        <title>Uitleg - Software emulator PEE30</title>
       
     
     
@@ -61,7 +61,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#registers-en-slave-adressen-i2c" class="md-skip">
+        <a href="#registers-en-slave-adressen-i2c-uitleg" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Registers en slave adressen I2C
+              Uitleg
             
           </span>
         </div>
@@ -325,6 +325,34 @@
     
   
   
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          Registers en slave adressen I2C
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Registers en slave adressen I2C" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Registers en slave adressen I2C
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -334,9 +362,44 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Registers en slave adressen I2C
+        Uitleg
       </a>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../registers_aandrijving/" class="md-nav__link">
+        I2C Registermap aandrijving
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../registers_belasting/" class="md-nav__link">
+        I2C Registermap belasting
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -441,573 +504,30 @@
               
                 
 
-<h1 id="registers-en-slave-adressen-i2c">Registers en slave-adressen I2C</h1>
-<p>In overleg met de projectleiders is er besloten welke data in wel register komt.</p>
-<div class="admonition note">
-<p class="admonition-title">Wat wordt er bedoeld met een register en waarvoor is het nodig?<p>Bij I2C communicatie is er altijd een master en een slave apparaat. 
+<h1 id="registers-en-slave-adressen-i2c-uitleg">Registers en slave-adressen I2C uitleg</h1>
+<p>In overleg met de projectleiders is er besloten welke data in welk register komt.\</p>
+<p>De slave-adressen van de aandrijving en belasting zijn:</p>
+<p><strong>Aandrijving:</strong> 0x06</p>
+<p><strong>Belasting:</strong> 0x09</p>
+<p>Hieronder uitleg over bepaalde begrippen die in eerste instantie misschien niet duidelijk zijn:</p>
+<details class="note">
+<summary>Wat wordt er bedoeld met een register en waarvoor is het nodig?</summary>
+<p>Bij I2C communicatie is er altijd een master en een slave apparaat. 
 Waarbij de master beslist met welk apparaat er gesproken wordt. De slave heeft hier geen zeggenschap over. De enige taak van een slave apparaat is reageren als een stuk aanroepbaar geheugen. Het stuk aanroepbaar geheugen van de slave is onderverdeeld in een aantal geheugenplaatsen deze geheugenplaatsen worden registers genoemd. Deze registers houden in dit geval 2 bytes (16-bits waarden). Naar deze geheugenplaatsen kan door het master apparaat geschreven of gelezen worden.
 Het speciferen naar welk register de master wil schrijven of lezen geeft de master aan met een verzoek aan het slave-apparaat. 
 Vervolgens krijgt de master of de data opgestuurd of zet de master zelf de data op de databus afhankelijk of het een schrijf- of leesverzoek is.</p>
-<p>Deze registers zijn van belang omdat er bij de communicatie tussen de onderdelen I2C wordt gebruikt. Waarbij het onderdeel MCU de master is en de belasting en aandrijving de slaves. Elk register heeft specifieke informatie: rendement, vermogen DUT, enz. In welke register welke informatie staat wordt beschreven in een <strong>register map</strong>.</p>
-</p>
-</div>
-<h1 id="register-map-aandrijving">Register map aandrijving</h1>
-<h2 id="register-0-status-aandrijving"><strong>Register 0: Status aandrijving</strong></h2>
-<h4 id="bit">BIT:</h4>
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">15</div>
-<div class="RegisterTabelLeeg">14</div>
-<div class="RegisterTabelLeeg">13</div>
-<div class="RegisterTabelLeeg">12</div>
-<div class="RegisterTabelLeeg">11</div>
-<div class="RegisterTabelLeeg">10</div>
-<div class="RegisterTabelLeeg">9</div>
-<div class="RegisterTabelLeeg">8</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-</div>
-</div>
-</div>
-
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">7</div>
-<div class="RegisterTabelLeeg">6</div>
-<div class="RegisterTabelLeeg">5</div>
-<div class="RegisterTabelLeeg">4</div>
-<div class="RegisterTabelLeeg">3</div>
-<div class="RegisterTabelLeeg">2</div>
-<div class="RegisterTabelLeeg">1</div>
-<div class="RegisterTabelLeeg">0</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelTekst">Stat</div>
-<div class="RegisterTabelTekst">Stat</div>
-<div class="RegisterTabelTekst">Stat</div>
-        </div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-</div>
-</div>
-</div>
-
-<h3 id="stat-20-status-aandrijving">Stat [2:0] Status aandrijving</h3>
-<p>Mogelijke status:</p>
-<ul>
-<li>
-<p>0x01 (0b100): Overload</p>
-</li>
-<li>
-<p>0x02 (0b010): Overvoltage</p>
-</li>
-<li>
-<p>0x03 (0b110): Noodstop</p>
-</li>
-<li>
-<p>0x04 (0b001): Gereed, wachtend op start signaal</p>
-</li>
-<li>
-<p>0x05 (0b101): DUT (Device under test) / Actief</p>
-</li>
-</ul>
-<hr />
-<p><strong>RO= Read only</strong></p>
-<p><strong>RW= Read/write</strong></p>
-<p>&nbsp;</p>
-<h2 id="register-1-rendement-aandrijving"><strong>Register 1: Rendement aandrijving</strong></h2>
-<h4 id="bit_1">BIT:</h4>
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">15</div>
-<div class="RegisterTabelLeeg">14</div>
-<div class="RegisterTabelLeeg">13</div>
-<div class="RegisterTabelLeeg">12</div>
-<div class="RegisterTabelLeeg">11</div>
-<div class="RegisterTabelLeeg">10</div>
-<div class="RegisterTabelLeeg">9</div>
-<div class="RegisterTabelLeeg">8</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-</div>
-</div>
-</div>
-
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">7</div>
-<div class="RegisterTabelLeeg">6</div>
-<div class="RegisterTabelLeeg">5</div>
-<div class="RegisterTabelLeeg">4</div>
-<div class="RegisterTabelLeeg">3</div>
-<div class="RegisterTabelLeeg">2</div>
-<div class="RegisterTabelLeeg">1</div>
-<div class="RegisterTabelLeeg">0</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelTekst">Ren</div>
-<div class="RegisterTabelTekst">Ren</div>
-<div class="RegisterTabelTekst">Ren</div>
-<div class="RegisterTabelTekst">Ren</div>
-<div class="RegisterTabelTekst">Ren</div>
-<div class="RegisterTabelTekst">Ren</div>
-<div class="RegisterTabelTekst">Ren</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-</div>
-</div>
-</div>
-
-<h3 id="ren-60-rendement-aandrijving">Ren [6:0] Rendement aandrijving</h3>
-<p>Mogelijke waarden zijn theoretisch mogelijk van 0-127. 
-Echter wordt alleen het bereik van 0-100(%) gebruikt.</p>
-<hr />
-<p><strong>RO= Read only</strong></p>
-<p><strong>RW= Read/write</strong></p>
-<p>&nbsp;</p>
-<h2 id="register-2-stroom-aandrijving"><strong>Register 2: Stroom aandrijving</strong></h2>
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">15</div>
-<div class="RegisterTabelLeeg">14</div>
-<div class="RegisterTabelLeeg">13</div>
-<div class="RegisterTabelLeeg">12</div>
-<div class="RegisterTabelLeeg">11</div>
-<div class="RegisterTabelLeeg">10</div>
-<div class="RegisterTabelLeeg">9</div>
-<div class="RegisterTabelLeeg">8</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelTekst">IA</div>
-<div class="RegisterTabelTekst">IA</div>
-<div class="RegisterTabelTekst">IA</div>
-<div class="RegisterTabelTekst">IA</div>
-<div class="RegisterTabelTekst">IA</div>
-<div class="RegisterTabelTekst">IA</div>
-<div class="RegisterTabelTekst">IA</div>
-<div class="RegisterTabelTekst">IA</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-</div>
-</div>
-</div>
-
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">7</div>
-<div class="RegisterTabelLeeg">6</div>
-<div class="RegisterTabelLeeg">5</div>
-<div class="RegisterTabelLeeg">4</div>
-<div class="RegisterTabelLeeg">3</div>
-<div class="RegisterTabelLeeg">2</div>
-<div class="RegisterTabelLeeg">1</div>
-<div class="RegisterTabelLeeg">0</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelTekst">IA</div>
-<div class="RegisterTabelTekst">IA.</div>
-<div class="RegisterTabelTekst">IA.</div>
-<div class="RegisterTabelTekst">IA.</div>
-<div class="RegisterTabelTekst">IA.</div>
-<div class="RegisterTabelTekst">IA.</div>
-<div class="RegisterTabelTekst">IA.</div>
-<div class="RegisterTabelTekst">IA.</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-</div>
-</div>
-</div>
-
-<h3 id="ia-150-stroom-aandrijving">IA [15:0] Stroom aandrijving</h3>
-<p>Mogelijke waarden zijn 0-65635 (mA)</p>
-<hr />
-<p><strong>RO= Read only</strong></p>
-<p><strong>RW= Read/write</strong>
-&nbsp;</p>
-<h2 id="register-3-spanning-aandrijving"><strong>Register 3: Spanning aandrijving</strong></h2>
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">15</div>
-<div class="RegisterTabelLeeg">14</div>
-<div class="RegisterTabelLeeg">13</div>
-<div class="RegisterTabelLeeg">12</div>
-<div class="RegisterTabelLeeg">11</div>
-<div class="RegisterTabelLeeg">10</div>
-<div class="RegisterTabelLeeg">9</div>
-<div class="RegisterTabelLeeg">8</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelTekst">UA</div>
-<div class="RegisterTabelTekst">UA</div>
-<div class="RegisterTabelTekst">UA</div>
-<div class="RegisterTabelTekst">UA</div>
-<div class="RegisterTabelTekst">UA</div>
-<div class="RegisterTabelTekst">UA</div>
-<div class="RegisterTabelTekst">UA</div>
-<div class="RegisterTabelTekst">UA</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-</div>
-</div>
-</div>
-
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">7</div>
-<div class="RegisterTabelLeeg">6</div>
-<div class="RegisterTabelLeeg">5</div>
-<div class="RegisterTabelLeeg">4</div>
-<div class="RegisterTabelLeeg">3</div>
-<div class="RegisterTabelLeeg">2</div>
-<div class="RegisterTabelLeeg">1</div>
-<div class="RegisterTabelLeeg">0</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelTekst">UA</div>
-<div class="RegisterTabelTekst">UA.</div>
-<div class="RegisterTabelTekst">UA.</div>
-<div class="RegisterTabelTekst">UA.</div>
-<div class="RegisterTabelTekst">UA.</div>
-<div class="RegisterTabelTekst">UA.</div>
-<div class="RegisterTabelTekst">UA.</div>
-<div class="RegisterTabelTekst">UA.</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-</div>
-</div>
-</div>
-
-<h3 id="ua-150-spanning-aandrijving">UA [15:0] Spanning aandrijving</h3>
-<p>Mogelijke waarden zijn 0-15000 (mV)     </p>
-<hr />
-<p><strong>RO= Read only</strong></p>
-<p><strong>RW= Read/write</strong></p>
-<hr />
-<h2 id="register-4-snelheid-aandrijving">Register 4: Snelheid aandrijving</h2>
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">15</div>
-<div class="RegisterTabelLeeg">14</div>
-<div class="RegisterTabelLeeg">13</div>
-<div class="RegisterTabelLeeg">12</div>
-<div class="RegisterTabelLeeg">11</div>
-<div class="RegisterTabelLeeg">10</div>
-<div class="RegisterTabelLeeg">9</div>
-<div class="RegisterTabelLeeg">8</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-</div>
-</div>
-</div>
-
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">7</div>
-<div class="RegisterTabelLeeg">6</div>
-<div class="RegisterTabelLeeg">5</div>
-<div class="RegisterTabelLeeg">4</div>
-<div class="RegisterTabelLeeg">3</div>
-<div class="RegisterTabelLeeg">2</div>
-<div class="RegisterTabelLeeg">1</div>
-<div class="RegisterTabelLeeg">0</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-<div class="RegisterTabelTekst">Snl</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-</div>
-</div>
-</div>
-
-<h3 id="snl-150-snelheid-aandrijving">Snl [15:0] Snelheid aandrijving</h3>
-<p>Mogelijke waarden zijn 0-10000 (RPM)       </p>
-<hr />
-<p><strong>RO= Read only</strong></p>
-<p><strong>RW= Read/write</strong></p>
-<h2 id="register-5-start-register">Register 5: Start register</h2>
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">15</div>
-<div class="RegisterTabelLeeg">14</div>
-<div class="RegisterTabelLeeg">13</div>
-<div class="RegisterTabelLeeg">12</div>
-<div class="RegisterTabelLeeg">11</div>
-<div class="RegisterTabelLeeg">10</div>
-<div class="RegisterTabelLeeg">9</div>
-<div class="RegisterTabelLeeg">8</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-</div>
-</div>
-</div>
-
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">7</div>
-<div class="RegisterTabelLeeg">6</div>
-<div class="RegisterTabelLeeg">5</div>
-<div class="RegisterTabelLeeg">4</div>
-<div class="RegisterTabelLeeg">3</div>
-<div class="RegisterTabelLeeg">2</div>
-<div class="RegisterTabelLeeg">1</div>
-<div class="RegisterTabelLeeg">0</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelnvt">&nbsp;</div>
-<div class="RegisterTabelTekst">Start</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-</div>
-</div>
-</div>
-
-<h3 id="snl-150-snelheid-aandrijving_1">Snl [15:0] Snelheid aandrijving</h3>
-<p>Mogelijke waarden zijn 0-10000 (RPM)       </p>
-<hr />
-<p><strong>RO= Read only</strong></p>
-<p><strong>RW= Read/write</strong></p>
-<h2 id="register-6-maximale-stroom-setpoint">Register 6: Maximale stroom setpoint</h2>
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">15</div>
-<div class="RegisterTabelLeeg">14</div>
-<div class="RegisterTabelLeeg">13</div>
-<div class="RegisterTabelLeeg">12</div>
-<div class="RegisterTabelLeeg">11</div>
-<div class="RegisterTabelLeeg">10</div>
-<div class="RegisterTabelLeeg">9</div>
-<div class="RegisterTabelLeeg">8</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-<div class="RegisterTabelLeeg">R/W</div>
-</div>
-</div>
-</div>
-
-<div class="RegisterTabel">
-<div class="RegisterTabelBody">
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">7</div>
-<div class="RegisterTabelLeeg">6</div>
-<div class="RegisterTabelLeeg">5</div>
-<div class="RegisterTabelLeeg">4</div>
-<div class="RegisterTabelLeeg">3</div>
-<div class="RegisterTabelLeeg">2</div>
-<div class="RegisterTabelLeeg">1</div>
-<div class="RegisterTabelLeeg">0</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-<div class="RegisterTabelTekst">Im</div>
-</div>
-<div class="RegisterTabelRij">
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-<div class="RegisterTabelLeeg">RO</div>
-</div>
-</div>
-</div>
-
-<h3 id="snl-150-snelheid-aandrijving_2">Snl [15:0] Snelheid aandrijving</h3>
-<p>Mogelijke waarden zijn 0-10000 (RPM)</p>
-<hr />
-<p><strong>RO= Read only</strong></p>
-<p><strong>RW= Read/write</strong></p>
+<p>Deze registers zijn van belang omdat er bij de communicatie tussen de onderdelen I2C wordt gebruikt. Waarbij het onderdeel MCU de master is en de belasting en aandrijving de slaves. Elk register heeft specifieke informatie: rendement, vermogen DUT, enz. In welke register welke informatie staat, wordt beschreven in een <strong>register map</strong>.</p>
+</details>
+<details class="note">
+<summary>Wat wordt er bedoeld met register 0 - register n bij de registermap</summary>
+<p>Als er een I2C transactie gemaakt moet worden, wordt als eerste het slave adres opgestuurd en vervolgens 
+in een aparte schrijfcyclus het registernummer waar uit gelezen wordt of naartoe geschreven moet worden.
+Het registernummer dat in de cyclus geschreven moet worden is gelijk aan het registernummer dat in de titel staat. </p>
+<p>Bijvoorbeeld:</p>
+<p><strong> Als er in de registermap staat:</strong></p>
+<p>Register 2: Stroom aandrijving</p>
+<p>En ik zou de stroom van de aandrijving willen lezen dan moet ik registernummer 2 opsturen.</p>
+</details>
 
               
             </article>
@@ -1037,13 +557,13 @@ Echter wordt alleen het bereik van 0-100(%) gebruikt.</p>
       
       
         
-        <a href="../license/" class="md-footer__link md-footer__link--next" aria-label="Next: Licentie" rel="next">
+        <a href="../registers_aandrijving/" class="md-footer__link md-footer__link--next" aria-label="Next: I2C Registermap aandrijving" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Licentie
+              I2C Registermap aandrijving
             </div>
           </div>
           <div class="md-footer__button md-icon">
