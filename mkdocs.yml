@@ -26,7 +26,11 @@ nav:
     - Datacommunicatie:
         - 'Afspraken datacommunicatie' : 'afspraken_datacommunicatie.md'
         - 'Pin-out Breakoutbord' : 'pin_out_breakoutbord.md'
-        - 'Registers en slave adressen I2C' : 'registers.md'
+        - 'Registers en slave adressen I2C' :
+           - 'Uitleg' : 'registers.md'
+           - 'I2C Registermap aandrijving' : 'registers_aandrijving.md'
+           - 'I2C Registermap belasting' : 'registers_belasting.md'
+           
     - Over het project:
         - 'Licentie': 'license.md'
         - 'Bijdragers/Contribuanten': 'Bijdragers.md'
