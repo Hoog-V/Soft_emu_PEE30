@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.0">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
     
     
       
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.82f3c0b9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.edf004c2.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.9204c3b2.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -509,17 +509,13 @@
 <p><strong>Aandrijving:</strong> 0x06</p>
 <p><strong>Belasting:</strong> 0x09</p>
 <p>Hieronder uitleg over bepaalde begrippen die in eerste instantie misschien niet duidelijk zijn:</p>
-<details class="note">
-<summary>Wat wordt er bedoeld met een register en waarvoor is het nodig?</summary>
-<p>Bij I2C communicatie is er altijd een master en een slave apparaat. 
+<details class="note"><summary>Wat wordt er bedoeld met een register en waarvoor is het nodig?</summary><p>Bij I2C communicatie is er altijd een master en een slave apparaat. 
 Waarbij de master beslist met welk apparaat er gesproken wordt. De slave heeft hier geen zeggenschap over. De enige taak van een slave apparaat is reageren als een stuk aanroepbaar geheugen. Het stuk aanroepbaar geheugen van de slave is onderverdeeld in een aantal geheugenplaatsen deze geheugenplaatsen worden registers genoemd. Deze registers houden in dit geval 2 bytes (16-bits waarden). Naar deze geheugenplaatsen kan door het master apparaat geschreven of gelezen worden.
 Het speciferen naar welk register de master wil schrijven of lezen geeft de master aan met een verzoek aan het slave-apparaat. 
 Vervolgens krijgt de master of de data opgestuurd of zet de master zelf de data op de databus afhankelijk of het een schrijf- of leesverzoek is.</p>
 <p>Deze registers zijn van belang omdat er bij de communicatie tussen de onderdelen I2C wordt gebruikt. Waarbij het onderdeel MCU de master is en de belasting en aandrijving de slaves. Elk register heeft specifieke informatie: rendement, vermogen DUT, enz. In welke register welke informatie staat, wordt beschreven in een <strong>register map</strong>.</p>
 </details>
-<details class="note">
-<summary>Wat wordt er bedoeld met register 0 - register n bij de registermap</summary>
-<p>Als er een I2C transactie gemaakt moet worden, wordt als eerste het slave adres opgestuurd en vervolgens 
+<details class="note"><summary>Wat wordt er bedoeld met register 0 - register n bij de registermap</summary><p>Als er een I2C transactie gemaakt moet worden, wordt als eerste het slave adres opgestuurd en vervolgens 
 in een aparte schrijfcyclus het registernummer waar uit gelezen wordt of naartoe geschreven moet worden.
 Het registernummer dat in de cyclus geschreven moet worden is gelijk aan het registernummer dat in de titel staat. </p>
 <p>Bijvoorbeeld:</p>
@@ -592,10 +588,10 @@ Het registernummer dat in de cyclus geschreven moet worden is gelijk aan het reg
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.cefbb252.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
     
     
-      <script src="../assets/javascripts/bundle.17f42bbf.min.js"></script>
+      <script src="../assets/javascripts/bundle.e1a181d9.min.js"></script>
       
     
   </body>
