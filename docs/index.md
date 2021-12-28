@@ -20,9 +20,6 @@ de kans groter zijn dat alle onderdelen met elkaar kunnen communiceren groter zi
 
 **Deze emulator is geschreven voor de MSP430FR2476 microcontroller**
 
-Ben je al in bezit van een MSP430FR2476? Zo niet kun je een bordje bij Victor kopen voor €8.
-Bovendien moet het bordje een werkende UART emulator/converter hebben zodat er tussen de PC 
-en MSP430FR2476 gecommuniceerd kan worden (deze zit standaard al ingebouwd op de MSP430FR2476 launchpad en het testbordje van Victor) . 
-
+Vanwege tijdgebrek is de soft_emu niet volledig afgeschreven. De code mag gebruikt worden maar je moet oppassen want je krijgt zelf geen punten omdat het niet jouw werk is. LET OP! Er staat een licentie op. Dus de banner die boven de code staat moet gekopieerd worden in jouw code. De samenvatting mag weggelaten worden. Ook moet in jouw documentatie een bronvermelding gemaakt worden naar deze repository.
 
 Heb je deze controller dan kun je hiermee verder: [omgeving opzetten](omgeving_opzetten.md)

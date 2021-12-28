@@ -76,17 +76,17 @@
      
 Mogelijke status:
       
-- 0x01 (0b100): Overload
+- 0x01 (0b001): Overload
       
 - 0x02 (0b010): Overspeed
 
-- 0x03 (0b110): Overheat
+- 0x03 (0b011): Overheat
       
-- 0x04 (0b001): Noodstop
+- 0x04 (0b100): Noodstop
         
 - 0x05 (0b101): Gereed, wachtend op start signaal
        
-- 0x06 (0b011): DUT (Device under test) / Actief
+- 0x06 (0b110): DUT (Device under test) / Actief
         
 ---
 **RO= Read only**

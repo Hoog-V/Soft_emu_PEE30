@@ -76,13 +76,13 @@
      
 Mogelijke status:
       
-- 0x01 (0b100): Overload
+- 0x01 (0b001): Overload
       
 - 0x02 (0b010): Overvoltage
       
-- 0x03 (0b110): Noodstop
+- 0x03 (0b011): Noodstop
         
-- 0x04 (0b001): Gereed, wachtend op start signaal
+- 0x04 (0b100): Gereed, wachtend op start signaal
        
 - 0x05 (0b101): DUT (Device under test) / Actief
         
